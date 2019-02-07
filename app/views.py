@@ -1,4 +1,5 @@
 from flask import render_template, url_for
+from forms import RegistrationForm, LoginForm
 from app import app
 
 app.config['SECRET_KEY'] = 'BREAD'
@@ -26,4 +27,9 @@ def index():
 @app.route('/home')
 def home():
     return render_template('home.html', posts=posts, title='Home')    
+
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', title='Register', form=form)    
 
