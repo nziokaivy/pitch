@@ -1,7 +1,7 @@
 from flask import render_template, url_for
 from app import app
 
-app.config
+app.config['SECRET_KEY'] = 'BREAD'
 
 posts = [
     {
