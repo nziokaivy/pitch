@@ -1,6 +1,8 @@
 from flask import render_template, url_for
 from app import app
 
+app.config
+
 posts = [
     {
         'author': 'Ivy Mwende',
