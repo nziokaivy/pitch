@@ -1,5 +1,5 @@
-header {
-    background-image: url(static/pictures/pitch.jpg);
+body{
+    background-image: url(pictures/pitch.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
