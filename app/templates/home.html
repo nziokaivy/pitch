@@ -1,14 +1,36 @@
 {% extends "layout.html" %}
-{% block styles %}
-    {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">>
-{% endblock %}
 
 {% block content %}
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">i-Pitch</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/register">Register</a></li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+      <br>
+      <br>
+      <br>
+  
+  
+
     {% for post in posts %}
-        <h1>{{ post.title }}</h1>
-        <p>By {{ post.author }} on {{ post.date_posted }}</p>
-        <p>{{ post.content }}</p>
+    <article class="media content-section">
+            <div class="media-body">
+              <div class="article-metadata">
+                <a class="mr-2" href="#">{{ post.author }}</a>
+                <small class="text-muted">{{ post.date_posted }}</small>
+              </div>
+              <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+              <p class="article-content">{{ post.content }}</p>
+            </div>
+          </article>
     {% endfor %}
 {% endblock %}
