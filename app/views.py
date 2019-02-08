@@ -34,7 +34,7 @@ def home():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        flash("")
+        flash(f'Account created for {form.username.data}!')
     return render_template('register.html', title='Register', form=form)    
 
 @app.route('/login')
