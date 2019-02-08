@@ -1,20 +1,8 @@
-from datetime import datetime
+
 from flask import render_template, url_for, flash, redirect
-from flask_sqlachemy import SQLAlchemy
 from app import app
-from forms import RegistrationForm, LoginForm
-
-
-app.config['SECRET_KEY'] = 'BREAD'
-app.config['SQLACHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-
-db = SQLAchemy(app)
-
-
-
-@run.shell
-def make_shell_context():
-    return dict(app = app,db = db, User = User)
+from app.forms import RegistrationForm, LoginForm
+from app.models import User, Post
 
 
 
