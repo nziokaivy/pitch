@@ -1,5 +1,6 @@
 
 from flask import render_template, url_for, flash, redirect
+from flask_sqlachemy import SQLAlchemy
 from app import app
 from forms import RegistrationForm, LoginForm
 
@@ -45,9 +46,7 @@ def login():
         flash('Yo have been logged in!', 'success')
         return redirect(url_for('home'))
     else:
-    flash('Login Unsuccessful .Please check username or password', 'danger')        
-
-        flash(f'Account created for {form.username.data}!', 'success')
+        flash('Login Unsuccessful .Please check username or password', 'danger')  
         return redirect(url_for('home'))
     return render_template('login.html', title='Login', form=form)    
 
